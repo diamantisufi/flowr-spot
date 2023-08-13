@@ -4,20 +4,20 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
 .bg-hero-image {
-  background-image: url("./assets/images/pl-hero.png");
+  background-image: url('./assets/images/pl-hero.png');
 }
 
 .button-primary {
@@ -49,11 +49,3 @@ code {
   background-color: #f5f6f7;
   outline: none;
 }
-
-/* .input-container label {
-  @apply absolute left-[15px] top-[11px] h-[10px] text-[11px] text-secondary;
-}
-
-.input-container input {
-  @apply h-full w-full border-none bg-transparent pt-[30px] pr-[16px] pb-[12px] pl-[16px] text-[13px] text-input outline-none;
-} */

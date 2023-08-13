@@ -1,5 +1,5 @@
-import { TextInput } from 'components/TextInput'
 import React from 'react'
+import { TextInput } from 'components/TextInput'
 
 type RegisterFormProps = {
   onSubmit: (event: React.FormEvent<HTMLFormElement>) => void
@@ -44,12 +44,12 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({ onSubmit }) => {
             required
           />
           <TextInput
+            label="Password"
             type="password"
             name="password"
             id="password"
             minLength={6}
             required
-            label="Password"
           />
           <button
             type="submit"

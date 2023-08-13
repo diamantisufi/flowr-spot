@@ -1,12 +1,12 @@
-import { TextInput } from "components/TextInput";
-import React from "react";
+import { TextInput } from 'components/TextInput'
+import React from 'react'
 
 type LoginFormProps = {
-  onSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
-};
+  onSubmit: (event: React.FormEvent<HTMLFormElement>) => void
+}
 
 export const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
-  const status = "loading";
+  const status = 'loading'
 
   return (
     <div className="flex flex-col">
@@ -31,10 +31,10 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
             type="submit"
             className="button-primary w-full p-5 mt-3 text-white font-ubuntu font-medium"
           >
-            {status === "loading" ? "Logging in..." : "Login to your Account"}
+            {status === 'loading' ? 'Logging in...' : 'Login to your Account'}
           </button>
         </div>
       </form>
     </div>
-  );
-};
+  )
+}

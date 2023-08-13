@@ -1,5 +1,5 @@
-import React from "react";
+import React from 'react'
 
-export const PrivateRoute = () => {
-  return <div>PrivateRoute</div>;
-};
+export const PrivateRoute: React.FC = () => {
+  return <div>PrivateRoute</div>
+}

@@ -1,5 +1,5 @@
-import React from "react";
+import React from 'react'
 
-export const FlowerList = () => {
-  return <div>FlowerList</div>;
-};
+export const FlowerList: React.FC = () => {
+  return <div>FlowerList</div>
+}

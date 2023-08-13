@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import appLogo from 'assets/images/logo.png'
+import { LoginModal } from 'components/Login/LoginModal'
+import { RegisterModal } from 'components/Register/RegisterModal'
+import { ActiveModal } from 'helpers/types'
 import { store } from 'store'
 import modalAction from 'store/actions/modalAction'
-import { LoginModal } from 'components/Login/LoginModal'
-import { ActiveModal } from 'helpers/types'
-import { RegisterModal } from 'components/Register/RegisterModal'
 
 export const Header: React.FC = () => {
   const { dispatch, state } = useContext(store) as any

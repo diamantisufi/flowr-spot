@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react'
 
 type TextInputProps = {
-  name: string;
-  type: string;
-  id: string;
-  minLength?: number;
-  required?: boolean;
-  className?: string;
-  label?: string;
-};
+  name: string
+  type: string
+  id: string
+  minLength?: number
+  required?: boolean
+  className?: string
+  label?: string
+}
 
 export const TextInput: React.FC<TextInputProps> = ({
   name,
@@ -39,5 +39,5 @@ export const TextInput: React.FC<TextInputProps> = ({
         }
       />
     </div>
-  );
-};
+  )
+}

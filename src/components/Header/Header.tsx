@@ -26,7 +26,7 @@ export const Header: React.FC = () => {
         </Link>
         <div className="flex items-center font-montserrat text-secondary font-medium">
           <div className="flex items-center gap-14 space-x-4">
-            <Link to="/">Flowers</Link>
+            <Link to="/flowers">Flowers</Link>
             <Link to="/latest-sightings">Latest Sightings</Link>
             <Link to="/favorites">Favorites</Link>
             <div
@@ -37,7 +37,7 @@ export const Header: React.FC = () => {
             </div>
           </div>
           <button
-            className="button-primary text-white py-3 px-6 rounded-[50px] ml-9"
+            className="button-primary text-white py-3 px-6 ml-9 rounded-[50px]"
             onClick={() => dispatch(modalAction(ActiveModal.REGISTER))}
           >
             New Account

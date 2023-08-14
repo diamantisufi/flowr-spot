@@ -1,5 +1,6 @@
-import React from "react";
-import { FlowerList } from "components/Flower/FlowerList";
+import React, { useEffect, useState } from 'react'
+import { FlowerList } from 'components/Flower/FlowerList'
+import { fetchFlowers } from 'services/FlowerService'
 
 export const Hero: React.FC = () => (
   <div className="h-[500px] relative bg-cover bg-center bg-hero-image">
@@ -16,13 +17,28 @@ export const Hero: React.FC = () => (
       </div>
     </div>
   </div>
-);
+)
 
 export const Homepage: React.FC = () => {
+  const [flowers, setFlowers] = useState([])
+
+  useEffect(() => {
+    const getAllFlowers = async () => {
+      await fetchFlowers()
+        .then((data) => {
+          setFlowers(data?.flowers)
+        })
+        .catch((e) => {
+          console.log(e)
+        })
+    }
+
+    getAllFlowers()
+  }, [])
   return (
     <div className="flex flex-col">
       <Hero />
-      <FlowerList />
+      <FlowerList data={flowers} />
     </div>
-  );
-};
+  )
+}

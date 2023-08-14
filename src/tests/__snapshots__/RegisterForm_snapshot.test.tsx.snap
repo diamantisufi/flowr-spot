@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RegisterForm Snapshot matches snapshot 1`] = `
+<div
+  className="flex flex-col"
+>
+  <form
+    data-testid="register-form"
+    onSubmit={[MockFunction]}
+  >
+    <div
+      className="mx-auto flex flex-col items-center justify-center gap-3"
+    >
+      <div
+        className="flex justify-between gap-[10px] w-full"
+      >
+        <div
+          className="relative rounded flex flex-col w-full h-full border border-inputBorder bg-inputBackground hover:border-slate-300 transition-colors text-[13px]"
+        >
+          <label
+            className="absolute top-2 text-[10px] text-secondary ml-4"
+            htmlFor="first_name"
+          >
+            First Name
+          </label>
+          <input
+            className="outline-none h-full w-full bg-transparent text-gray p-4 pt-7 w-full"
+            id="first_name"
+            name="first_name"
+            required={true}
+            type="text"
+          />
+        </div>
+        <div
+          className="relative rounded flex flex-col w-full h-full border border-inputBorder bg-inputBackground hover:border-slate-300 transition-colors text-[13px]"
+        >
+          <label
+            className="absolute top-2 text-[10px] text-secondary ml-4"
+            htmlFor="last_name"
+          >
+            Last Name
+          </label>
+          <input
+            className="outline-none h-full w-full bg-transparent text-gray p-4 pt-7 undefined"
+            id="last_name"
+            name="last_name"
+            required={true}
+            type="text"
+          />
+        </div>
+      </div>
+      <div
+        className="relative rounded flex flex-col w-full h-full border border-inputBorder bg-inputBackground hover:border-slate-300 transition-colors text-[13px]"
+      >
+        <label
+          className="absolute top-2 text-[10px] text-secondary ml-4"
+          htmlFor="date_of_birth"
+        >
+          Date of Birth
+        </label>
+        <input
+          className="outline-none h-full w-full bg-transparent text-gray p-4 pt-7 undefined"
+          id="date_of_birth"
+          name="date_of_birth"
+          required={true}
+          type="date"
+        />
+      </div>
+      <div
+        className="relative rounded flex flex-col w-full h-full border border-inputBorder bg-inputBackground hover:border-slate-300 transition-colors text-[13px]"
+      >
+        <label
+          className="absolute top-2 text-[10px] text-secondary ml-4"
+          htmlFor="email"
+        >
+          Email Address
+        </label>
+        <input
+          className="outline-none h-full w-full bg-transparent text-gray p-4 pt-7 undefined"
+          id="email"
+          name="email"
+          required={true}
+          type="email"
+        />
+      </div>
+      <div
+        className="relative rounded flex flex-col w-full h-full border border-inputBorder bg-inputBackground hover:border-slate-300 transition-colors text-[13px]"
+      >
+        <label
+          className="absolute top-2 text-[10px] text-secondary ml-4"
+          htmlFor="password"
+        >
+          Password
+        </label>
+        <input
+          className="outline-none h-full w-full bg-transparent text-gray p-4 pt-7 undefined"
+          id="password"
+          minLength={6}
+          name="password"
+          required={true}
+          type="password"
+        />
+      </div>
+      <button
+        className="button-primary w-full p-5 mt-3 text-white font-ubuntu font-medium"
+        type="submit"
+      >
+        Create Account
+      </button>
+    </div>
+  </form>
+</div>
+`;

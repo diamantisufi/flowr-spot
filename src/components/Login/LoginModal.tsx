@@ -51,7 +51,7 @@ export const LoginModal: React.FC<LoginModalProps> = ({
           {error ? 'Error' : 'Welcome Back'}
         </h2>
       </div>
-      <LoginForm onSubmit={handleSubmit} />
+      <LoginForm onSubmit={handleSubmit} error={error} />
     </Modal>
   )
 }

@@ -13,7 +13,7 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({
 }) => {
   return (
     <div className='flex flex-col'>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} data-testid='register-form'>
         <div className='mx-auto flex flex-col items-center justify-center gap-3'>
           <div className='flex justify-between gap-[10px] w-full'>
             <TextInput

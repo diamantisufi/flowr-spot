@@ -17,6 +17,7 @@ export const Header: React.FC = () => {
     <header className='flex w-full justify-between items-center p-4 shadow-md'>
       <Link
         to='/'
+        data-testid='logo-link'
         className='flex items-center text-lg font-montserrat font-bold text-primary'
       >
         <img src={appLogo} alt='Logo' className='h-8 w-8 mr-2' />
@@ -24,7 +25,9 @@ export const Header: React.FC = () => {
       </Link>
       <div className='flex items-center font-montserrat text-secondary font-medium'>
         <div className='flex items-center gap-14 space-x-4'>
-          <Link to='/flowers'>Flowers</Link>
+          <Link to={'/flowers'} id='test'>
+            Flowers
+          </Link>
           <Link to='/latest-sightings'>Latest Sightings</Link>
           <Link to='/favorites'>Favorites</Link>
           <div

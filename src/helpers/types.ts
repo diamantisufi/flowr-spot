@@ -8,10 +8,10 @@ export const ActiveModal = {
 }
 
 export type FlowerListResponseData = {
-  id: 'string'
-  name: 'string'
-  latin_name: 'string'
-  profile_picture: 'string'
+  id: string
+  name: string
+  latin_name: string
+  profile_picture: string
   favorite: boolean
   sightings: number
 }

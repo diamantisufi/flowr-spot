@@ -8,7 +8,9 @@ describe('RegisterForm Snapshot', () => {
     const mockError = ''
 
     const tree = renderer
-      .create(<LoginForm onSubmit={mockOnSubmit} error={mockError} />)
+      .create(
+        <LoginForm onSubmit={mockOnSubmit} error={mockError} loading={false} />
+      )
       .toJSON()
     expect(tree).toMatchSnapshot()
   })

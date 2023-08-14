@@ -5,11 +5,13 @@ import { ErrorComponent } from 'components/Error'
 type RegisterFormProps = {
   onSubmit: (event: React.FormEvent<HTMLFormElement>) => void
   error: string
+  loading: boolean
 }
 
 export const RegisterForm: React.FC<RegisterFormProps> = ({
   error,
   onSubmit,
+  loading,
 }) => {
   return (
     <div className='flex flex-col'>
@@ -59,7 +61,7 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({
             type='submit'
             className='button-primary w-full p-5 mt-3 text-white font-ubuntu font-medium'
           >
-            Create Account
+            {loading ? 'Creating account...' : ' Create Account'}
           </button>
         </div>
       </form>

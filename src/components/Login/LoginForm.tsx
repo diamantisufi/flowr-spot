@@ -5,11 +5,14 @@ import React from 'react'
 type LoginFormProps = {
   onSubmit: (event: React.FormEvent<HTMLFormElement>) => void
   error: string
+  loading: boolean
 }
 
-export const LoginForm: React.FC<LoginFormProps> = ({ error, onSubmit }) => {
-  const status = 'loading'
-
+export const LoginForm: React.FC<LoginFormProps> = ({
+  error,
+  onSubmit,
+  loading,
+}) => {
   return (
     <div className='flex flex-col'>
       <form onSubmit={onSubmit} data-testid='login-form'>
@@ -31,10 +34,11 @@ export const LoginForm: React.FC<LoginFormProps> = ({ error, onSubmit }) => {
           />
           {error && <ErrorComponent error={error} />}
           <button
+            disabled={loading}
             type='submit'
             className='button-primary w-full p-5 mt-3 text-white font-ubuntu font-medium'
           >
-            Login to your Account
+            {loading ? 'Logging in...' : 'Login to your Account'}
           </button>
         </div>
       </form>

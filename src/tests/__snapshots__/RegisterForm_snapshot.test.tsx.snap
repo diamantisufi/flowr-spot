@@ -105,7 +105,7 @@ exports[`RegisterForm Snapshot matches snapshot 1`] = `
         className="button-primary w-full p-5 mt-3 text-white font-ubuntu font-medium"
         type="submit"
       >
-        Create Account
+         Create Account
       </button>
     </div>
   </form>

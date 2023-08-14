@@ -17,6 +17,7 @@ export const RegisterModal: React.FC<LoginModalProps> = ({
   handleRegisterSuccess,
 }) => {
   const [error, setError] = useState<string>('')
+  const [loading, setLoading] = useState<boolean>(false)
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -25,6 +26,7 @@ export const RegisterModal: React.FC<LoginModalProps> = ({
     const formDataString = JSON.stringify(Object.fromEntries(formData))
     const payload = JSON.parse(formDataString)
 
+    setLoading(true)
     await registerUser(payload)
       .then((response: RegisterResponseData | undefined) => {
         if (response?.auth_token) {
@@ -33,6 +35,9 @@ export const RegisterModal: React.FC<LoginModalProps> = ({
       })
       .catch((error) => {
         setError(error?.response?.data?.error)
+      })
+      .finally(() => {
+        setLoading(false)
       })
   }
 
@@ -51,7 +56,7 @@ export const RegisterModal: React.FC<LoginModalProps> = ({
           {error ? 'Error' : 'Create an Account'}
         </h2>
       </div>
-      <RegisterForm onSubmit={handleSubmit} error={error} />
+      <RegisterForm onSubmit={handleSubmit} error={error} loading={loading} />
     </Modal>
   )
 }

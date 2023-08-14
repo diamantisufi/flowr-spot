@@ -48,6 +48,7 @@ exports[`RegisterForm Snapshot matches snapshot 1`] = `
       </div>
       <button
         className="button-primary w-full p-5 mt-3 text-white font-ubuntu font-medium"
+        disabled={false}
         type="submit"
       >
         Login to your Account

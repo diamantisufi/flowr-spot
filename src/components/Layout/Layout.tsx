@@ -31,16 +31,25 @@ export const Layout: React.FC = () => {
     dispatch(modalAction(ActiveModal.REGISTER_SUCCESS))
   }
 
+  const handleLoginSuccess = () => {
+    dispatch(modalAction(null))
+    dispatch(modalAction(ActiveModal.PROFILE))
+  }
+
   return (
     <>
-      <div className="flex flex-col">
+      <div className='flex flex-col'>
         <Header />
         <Homepage />
       </div>
 
       {/* Modal handlers */}
       {state?.activeModal === ActiveModal.LOGIN && (
-        <LoginModal isOpen onClose={handleModalClose} />
+        <LoginModal
+          isOpen
+          onClose={handleModalClose}
+          handleLoginSuccess={handleLoginSuccess}
+        />
       )}
       {state?.activeModal === ActiveModal.REGISTER && (
         <RegisterModal
@@ -52,7 +61,7 @@ export const Layout: React.FC = () => {
       {state?.activeModal === ActiveModal.REGISTER_SUCCESS && (
         <SuccessModal
           isOpen
-          content="Congratulations! You have successfully signed up for FlowrSpot!"
+          content='Congratulations! You have successfully signed up for FlowrSpot!'
           onActionClick={handleRegisterFlow}
           onClose={handleModalClose}
         />

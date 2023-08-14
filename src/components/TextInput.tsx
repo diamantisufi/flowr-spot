@@ -20,10 +20,10 @@ export const TextInput: React.FC<TextInputProps> = ({
   className,
 }): JSX.Element => {
   return (
-    <div className="relative rounded flex flex-col w-full h-full border border-inputBorder bg-inputBackground hover:border-slate-300 transition-colors text-[13px]">
+    <div className='relative rounded flex flex-col w-full h-full border border-inputBorder bg-inputBackground hover:border-slate-300 transition-colors text-[13px]'>
       <label
         htmlFor={name}
-        className="absolute top-2 text-[10px] text-secondary ml-4"
+        className='absolute top-2 text-[10px] text-secondary ml-4'
       >
         {label}
       </label>

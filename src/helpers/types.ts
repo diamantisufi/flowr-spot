@@ -33,3 +33,8 @@ export type RegisterResponseData = {
   auth_token: string
   error?: string
 }
+
+export type LoginResponseData = {
+  auth_token: string
+  error?: string
+}

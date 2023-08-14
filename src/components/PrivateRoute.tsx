@@ -14,7 +14,7 @@ const PrivateRoute: React.FC<PrivateRouteProps> = ({
   return (
     <Route
       {...rest}
-      element={authToken ? <Component /> : <Navigate to="/login" />}
+      element={authToken ? <Component /> : <Navigate to='/login' />}
     />
   )
 }

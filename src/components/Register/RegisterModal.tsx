@@ -39,15 +39,15 @@ export const RegisterModal: React.FC<LoginModalProps> = ({
   return (
     <Modal
       isOpen={isOpen}
-      contentLabel="Login Modal"
+      contentLabel='Login Modal'
       style={modalStyles}
       shouldCloseOnOverlayClick
       shouldCloseOnEsc
       onRequestClose={onClose}
       ariaHideApp={false}
     >
-      <div className="modal-container">
-        <h2 className="text-gray font-medium font-ubuntu mb-7">
+      <div className='modal-container'>
+        <h2 className='text-gray font-medium font-ubuntu mb-7'>
           {error ? 'Error' : 'Create an Account'}
         </h2>
       </div>

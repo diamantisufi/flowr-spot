@@ -1,5 +1,5 @@
-import React from "react";
+import React from 'react'
 
 export const ProfilePage: React.FC = () => {
-  return <div>:React.FC</div>;
-};
+  return <div>Profile Page</div>
+}

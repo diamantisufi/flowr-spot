@@ -1,13 +1,16 @@
 import React from 'react'
 import { TextInput } from 'components/TextInput'
+import { ErrorComponent } from 'components/Error'
 
 type RegisterFormProps = {
   onSubmit: (event: React.FormEvent<HTMLFormElement>) => void
+  error: string
 }
 
-export const RegisterForm: React.FC<RegisterFormProps> = ({ onSubmit }) => {
-  const status = 'loading'
-
+export const RegisterForm: React.FC<RegisterFormProps> = ({
+  error,
+  onSubmit,
+}) => {
   return (
     <div className="flex flex-col">
       <form onSubmit={onSubmit}>
@@ -15,25 +18,25 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({ onSubmit }) => {
           <div className="flex justify-between gap-[10px] w-full">
             <TextInput
               label="First Name"
-              type="email"
-              name="email"
-              id="email"
+              type="text"
+              name="first_name"
+              id="first_name"
               required
               className="w-full"
             />
             <TextInput
               label="Last Name"
-              type="email"
-              name="email"
-              id="email"
+              type="text"
+              name="last_name"
+              id="last_name"
               required
             />
           </div>
           <TextInput
             label="Date of Birth"
             type="date"
-            name="date"
-            id="date"
+            name="date_of_birth"
+            id="date_of_birth"
             required
           />
           <TextInput
@@ -51,11 +54,12 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({ onSubmit }) => {
             minLength={6}
             required
           />
+          {error && <ErrorComponent error={error} />}
           <button
             type="submit"
             className="button-primary w-full p-5 mt-3 text-white font-ubuntu font-medium"
           >
-            {status === 'loading' ? 'Registering...' : 'Login to your Account'}
+            Create Account
           </button>
         </div>
       </form>

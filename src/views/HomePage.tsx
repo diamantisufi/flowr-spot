@@ -35,6 +35,7 @@ export const Homepage: React.FC = () => {
 
     getAllFlowers()
   }, [])
+
   return (
     <div className="flex flex-col">
       <Hero />

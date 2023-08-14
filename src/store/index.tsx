@@ -2,7 +2,8 @@ import React, { ReactNode, createContext, useReducer } from 'react'
 import { UPDATE_MODAL_STATE } from './actionTypes'
 
 type State = {
-  user: any // Change 'any' to your user data type
+  user: any
+  activeModal: string
 }
 
 const initialState = {

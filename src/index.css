@@ -23,6 +23,9 @@ code {
 .button-primary {
   background: linear-gradient(270deg, #ecbcb3 0%, #eaa79e 100%);
   box-shadow: 0px 15px 20px 0px rgba(234, 168, 159, 0.2);
+  font-weight: 500;
+  color: #fff;
+  font-family: 'Ubuntu';
 }
 
 .modal-container {

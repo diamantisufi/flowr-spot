@@ -2,7 +2,7 @@ import axios from 'axios'
 import { authHeader } from 'helpers/authHeader'
 import { LoginRequestParams, RegisterRequestParams } from 'helpers/types'
 
-const serverUrl = 'https://flowrspot-api.herokuapp.com/api/v1'
+const serverUrl = process.env.REACT_APP_API_URL
 
 export const registerUser = async (params: RegisterRequestParams) => {
   const response = await axios.post(`${serverUrl}/users/register`, params)

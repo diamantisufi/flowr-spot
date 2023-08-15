@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const serverUrl = 'https://flowrspot-api.herokuapp.com/api/v1'
+const serverUrl = process.env.REACT_APP_API_URL
 
 export const fetchFlowers = async () => {
   const response = await axios.get(`${serverUrl}/flowers`)

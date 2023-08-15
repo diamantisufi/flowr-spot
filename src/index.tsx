@@ -9,7 +9,7 @@ root.render(
   <StateProvider>
     <Suspense
       fallback={
-        <div className="flex w-full h-full justify-center items-center">
+        <div className='flex w-full h-full justify-center items-center'>
           loading...
         </div>
       }

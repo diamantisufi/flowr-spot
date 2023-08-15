@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { FlowerListResponseData } from 'helpers/types'
 import { Favorite as FavoriteIcon } from 'components/Icons/Favorite'
+import { IsAuthenticated } from 'helpers/authHeader'
 
 type FlowerItemProps = {
   flower: FlowerListResponseData
@@ -8,6 +9,7 @@ type FlowerItemProps = {
 
 export const FlowerItem: React.FC<FlowerItemProps> = ({ flower }) => {
   const [favorite, setFavorite] = useState<boolean>(false)
+  const isLoggedIn = IsAuthenticated()
 
   return (
     <div className='relative h-[22rem]'>
@@ -17,12 +19,15 @@ export const FlowerItem: React.FC<FlowerItemProps> = ({ flower }) => {
         className='w-full h-full object-cover object-center rounded'
       />
       <div className='absolute inset-0 flowerItemCard'>
-        <div
-          className='absolute top-2 right-2 text-white cursor-pointer'
-          onClick={() => setFavorite((fav) => !fav)}
-        >
-          <FavoriteIcon active={favorite} />
-        </div>
+        {isLoggedIn && (
+          <div
+            className='absolute top-2 right-2 text-white cursor-pointer'
+            onClick={() => setFavorite((fav) => !fav)}
+          >
+            <FavoriteIcon active={favorite} />
+          </div>
+        )}
+
         <div className='absolute bottom-0 left-0 right-0 bg-opacity-50 flex flex-col justify-center text-center font-ubuntu text-white'>
           <h2 className='text-xl'>{flower?.name}</h2>
           <p className='text-xs italic mb-5leading-3 opacity-70'>

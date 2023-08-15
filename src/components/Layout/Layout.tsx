@@ -3,7 +3,7 @@ import { Header } from 'components/Header/Header'
 import { Homepage } from 'views/HomePage'
 import { store } from 'store'
 import modalAction from 'store/actions/modalAction'
-import { ActiveModal } from 'helpers/types'
+import { ActiveModal, User } from 'helpers/types'
 import { LoginModal } from 'components/Login/LoginModal'
 import { RegisterModal } from 'components/Register/RegisterModal'
 import { SuccessModal } from 'components/SuccessModal'
@@ -11,26 +11,37 @@ import { ProfileModal } from 'components/Profile/ProfileModal'
 import { getUserDetails } from 'services/userService'
 import loginAction from 'store/actions/loginAction'
 
+interface AppState {
+  user: User
+  activeModal: string
+  auth: {
+    token: string
+  }
+}
+
+type responseData = {
+  user: User
+}
+
 export const Layout: React.FC = () => {
   const context = useContext(store)
   const dispatch = context?.dispatch
-  const state = context?.state
-  const [user, setUser] = useState(null)
-  const [error, setError] = useState(null)
+  const state = context?.state as AppState
+  const [user, setUser] = useState<User | null>(null)
+  const [error, setError] = useState<string>('')
 
   useEffect(() => {
     const fetchUser = async () => {
       await getUserDetails()
-        .then((data: any) => {
+        .then((data: responseData) => {
           setUser(data?.user)
         })
         .catch((e) => {
           setError(e?.response?.data?.error)
         })
     }
-
-    fetchUser()
-  }, [])
+    if (state?.auth?.token) fetchUser()
+  }, [state])
 
   if (!dispatch) {
     return null
@@ -61,12 +72,10 @@ export const Layout: React.FC = () => {
     if (isProfile) dispatch(modalAction(ActiveModal.PROFILE))
   }
 
-  console.log(state)
-
   return (
     <>
       <div className='flex flex-col'>
-        <Header />
+        <Header user={user} />
         <Homepage />
       </div>
 
@@ -85,8 +94,14 @@ export const Layout: React.FC = () => {
           handleRegisterSuccess={handleRegisterSuccess}
         />
       )}
-      {/* state?.activeModal === ActiveModal.PROFILE */}
-      {false && <ProfileModal isOpen onClose={handleModalClose} />}
+      {state?.activeModal === ActiveModal.PROFILE && (
+        <ProfileModal
+          isOpen
+          onClose={handleModalClose}
+          user={user}
+          error={error}
+        />
+      )}
 
       {/* success modals */}
       {state?.activeModal === ActiveModal.REGISTER_SUCCESS && (

@@ -20,7 +20,6 @@ export const getUserDetails = async () => {
     headers: authHeader(),
   }
 
-  console.log({ requestOptions })
   const response = await axios.get(`${serverUrl}/users/me`, requestOptions)
   return response?.data || []
 }

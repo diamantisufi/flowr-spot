@@ -15,7 +15,7 @@ export const Hero: React.FC = () => (
         </p>
         <div className='relative mt-10 '>
           <input
-            className='h-[70px] text-secondary w-full pl-5 text-lg font-ubuntu outline-none '
+            className='h-[70px] text-secondary w-full pl-5 text-lg font-ubuntu outline-none font-light'
             placeholder='Looking for something specific?'
           />
           <div className='absolute right-5 top-0 h-full flex items-center'>
@@ -29,15 +29,21 @@ export const Hero: React.FC = () => (
 
 export const Homepage: React.FC = () => {
   const [flowers, setFlowers] = useState([])
+  const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     const getAllFlowers = async () => {
+      setLoading(true)
       await fetchFlowers()
         .then((data) => {
           setFlowers(data?.flowers)
         })
         .catch((e) => {
-          console.log(e)
+          setError(e?.response?.data?.error)
+        })
+        .finally(() => {
+          setLoading(false)
         })
     }
 
@@ -47,7 +53,7 @@ export const Homepage: React.FC = () => {
   return (
     <div className='flex flex-col'>
       <Hero />
-      <FlowerList data={flowers} />
+      <FlowerList data={flowers} error={error} loading={loading} />
     </div>
   )
 }

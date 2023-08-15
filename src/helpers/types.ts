@@ -1,10 +1,10 @@
-export const ActiveModal = {
-  LOGIN: 'login',
-  LOGIN_SUCCESS: 'login_success',
-  REGISTER: 'register',
-  REGISTER_SUCCESS: 'register_success',
-  PROFILE: 'profile',
-  SETTINGS: 'settings',
+export enum ActiveModal {
+  LOGIN = 'login',
+  LOGIN_SUCCESS = 'login_success',
+  REGISTER = 'register',
+  REGISTER_SUCCESS = 'register_success',
+  PROFILE = 'profile',
+  SETTINGS = 'settings',
 }
 
 export type FlowerListResponseData = {
@@ -37,4 +37,10 @@ export type RegisterResponseData = {
 export type LoginResponseData = {
   auth_token: string
   error?: string
+}
+
+export type User = {
+  id: number
+  first_name: string
+  last_name: string
 }

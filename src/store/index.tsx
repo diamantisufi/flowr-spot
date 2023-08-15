@@ -4,9 +4,10 @@ import {
   LOGOUT_SUCCESS,
   UPDATE_MODAL_STATE,
 } from './actionTypes'
+import { User } from 'helpers/types'
 
 type State = {
-  user: any
+  user: User | null
   activeModal: string
 }
 

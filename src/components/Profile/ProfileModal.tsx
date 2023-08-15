@@ -1,21 +1,22 @@
 import { modalStyles } from 'common/modalStyles'
 import { ModalCloseIcon } from 'components/ModalClose'
-import React, { useState } from 'react'
+import React from 'react'
 import Modal from 'react-modal'
 import { ProfileData } from './ProfileData'
+import { User } from 'helpers/types'
 
 type ProfileModalProps = {
   isOpen: boolean
   onClose: () => void
+  user: User | null
+  error: string
 }
 
 export const ProfileModal: React.FC<ProfileModalProps> = ({
   isOpen,
   onClose,
+  user,
 }) => {
-  const [error, setError] = useState<string>('')
-  const [loading, setLoading] = useState<boolean>(false)
-
   const updatedModalStyles = {
     ...modalStyles,
     content: {
@@ -36,7 +37,7 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
     >
       <div className='modal-container relative'>
         <ModalCloseIcon onClose={onClose} />
-        <ProfileData />
+        <ProfileData user={user} />
       </div>
     </Modal>
   )

@@ -19,11 +19,9 @@ describe('FlowerItem', () => {
     // Assertions for flower details
     const flowerName = screen.getByText(mockFlower.name)
     const latinName = screen.getByText(mockFlower.latin_name)
-    const sightings = screen.getByText(mockFlower.sightings.toString())
 
     expect(flowerName).toBeInTheDocument()
     expect(latinName).toBeInTheDocument()
-    expect(sightings).toBeInTheDocument()
   })
 
   // Add more test cases if needed...

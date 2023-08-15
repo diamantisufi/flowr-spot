@@ -3,113 +3,90 @@
 exports[`FlowerList matches snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 p-4 mt-16"
+    class="p-4 my-16 mx-2"
+    id="flowers"
   >
     <div
-      class="relative  h-[22rem]"
+      class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5"
     >
-      <img
-        alt="Rose"
-        class="w-full h-full object-cover object-center rounded"
-        src="rose.jpg"
-      />
       <div
-        class=" absolute inset-0 "
+        class="relative h-[22rem]"
       >
+        <img
+          alt="Rose"
+          class="w-full h-full object-cover object-center rounded"
+          src="rose.jpg"
+        />
         <div
-          class="absolute top-2 right-2 text-white"
+          class="absolute inset-0 flowerItemCard"
         >
-          <svg
-            class="h-6 w-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            class="absolute bottom-0 left-0 right-0 bg-opacity-50 flex flex-col justify-center text-center font-ubuntu text-white"
           >
-            <path
-              d="M4 6h16M4 12h16M4 18h7"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-            />
-          </svg>
-        </div>
-        <div
-          class="absolute bottom-0 left-0 right-0 bg-opacity-50 flex flex-col justify-center text-center font-ubuntu text-white"
-        >
-          <h2
-            class="text-xl"
-          >
-            Rose
-          </h2>
-          <p
-            class="text-xs italic mb-5leading-3 opacity-70"
-          >
-            Rosa
-          </p>
-          <button
-            class="text-white text-center font-ubuntu text-xs italic font-light leading-3 mt-5"
-          >
-            <p
-              class="text-gray-300"
+            <h2
+              class="text-xl"
             >
-              10
+              Rose
+            </h2>
+            <p
+              class="text-xs italic mb-5leading-3 opacity-70"
+            >
+              Rosa
             </p>
-          </button>
+            <div
+              class="w-full flex items-center justify-center"
+            >
+              <button
+                class="text-white text-center font-ubuntu text-xs leading-3 my-5 bg-[#00000070] rounded-full w-1/2 py-3 px-4 false"
+              >
+                <p
+                  class="text-gray-300"
+                >
+                  10 sightings
+                </p>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div
-      class="relative  h-[22rem]"
-    >
-      <img
-        alt="Sunflower"
-        class="w-full h-full object-cover object-center rounded"
-        src="sunflower.jpg"
-      />
       <div
-        class=" absolute inset-0 "
+        class="relative h-[22rem]"
       >
+        <img
+          alt="Sunflower"
+          class="w-full h-full object-cover object-center rounded"
+          src="sunflower.jpg"
+        />
         <div
-          class="absolute top-2 right-2 text-white"
+          class="absolute inset-0 flowerItemCard"
         >
-          <svg
-            class="h-6 w-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            class="absolute bottom-0 left-0 right-0 bg-opacity-50 flex flex-col justify-center text-center font-ubuntu text-white"
           >
-            <path
-              d="M4 6h16M4 12h16M4 18h7"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-            />
-          </svg>
-        </div>
-        <div
-          class="absolute bottom-0 left-0 right-0 bg-opacity-50 flex flex-col justify-center text-center font-ubuntu text-white"
-        >
-          <h2
-            class="text-xl"
-          >
-            Sunflower
-          </h2>
-          <p
-            class="text-xs italic mb-5leading-3 opacity-70"
-          >
-            Helianthus
-          </p>
-          <button
-            class="text-white text-center font-ubuntu text-xs italic font-light leading-3 mt-5"
-          >
-            <p
-              class="text-gray-300"
+            <h2
+              class="text-xl"
             >
-              15
+              Sunflower
+            </h2>
+            <p
+              class="text-xs italic mb-5leading-3 opacity-70"
+            >
+              Helianthus
             </p>
-          </button>
+            <div
+              class="w-full flex items-center justify-center"
+            >
+              <button
+                class="text-white text-center font-ubuntu text-xs leading-3 my-5 bg-[#00000070] rounded-full w-1/2 py-3 px-4 false"
+              >
+                <p
+                  class="text-gray-300"
+                >
+                  15 sightings
+                </p>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

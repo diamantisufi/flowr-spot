@@ -102,7 +102,7 @@ exports[`RegisterForm Snapshot matches snapshot 1`] = `
         />
       </div>
       <button
-        className="button-primary w-full p-5 mt-3 text-white font-ubuntu font-medium"
+        className="button-primary w-full p-5 mt-3 text-white font-ubuntu font-medium rounded"
         type="submit"
       >
          Create Account

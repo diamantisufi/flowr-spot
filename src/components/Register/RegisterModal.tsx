@@ -4,6 +4,7 @@ import { modalStyles } from 'common/modalStyles'
 import { RegisterForm } from './RegisterForm'
 import { registerUser } from 'services/userService'
 import { RegisterResponseData } from 'helpers/types'
+import { ModalCloseIcon } from 'components/ModalClose'
 
 type LoginModalProps = {
   isOpen: boolean
@@ -52,6 +53,7 @@ export const RegisterModal: React.FC<LoginModalProps> = ({
       ariaHideApp={false}
     >
       <div className='modal-container'>
+        <ModalCloseIcon onClose={onClose} />
         <h2 className='text-gray font-medium font-ubuntu mb-7'>
           {error ? 'Error' : 'Create an Account'}
         </h2>

@@ -25,11 +25,12 @@ export const Header: React.FC = () => {
       </Link>
       <div className='flex items-center font-montserrat text-secondary font-medium'>
         <div className='flex items-center gap-14 space-x-4'>
-          <Link to={'/flowers'} id='test'>
+          {/* links to "/" cause of no requirements */}
+          <Link to={'/'} id='test'>
             Flowers
           </Link>
-          <Link to='/latest-sightings'>Latest Sightings</Link>
-          <Link to='/favorites'>Favorites</Link>
+          <Link to='/'>Latest Sightings</Link>
+          <Link to='/'>Favorites</Link>
           <div
             onClick={() => dispatch(modalAction(ActiveModal.LOGIN))}
             className='text-primary cursor-pointer'

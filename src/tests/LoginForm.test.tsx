@@ -8,7 +8,9 @@ describe('LoginForm', () => {
     const mockOnSubmit = jest.fn()
     const mockError = ''
 
-    render(<LoginForm onSubmit={mockOnSubmit} error={mockError} />)
+    render(
+      <LoginForm onSubmit={mockOnSubmit} error={mockError} loading={false} />
+    )
 
     // Test if input fields and button are rendered
     const emailInput = screen.getByLabelText('Email Address')
@@ -26,7 +28,9 @@ describe('LoginForm', () => {
     const mockOnSubmit = jest.fn()
     const mockError = ''
 
-    render(<LoginForm onSubmit={mockOnSubmit} error={mockError} />)
+    render(
+      <LoginForm onSubmit={mockOnSubmit} error={mockError} loading={false} />
+    )
     // Fill out form fields
     const emailInput = screen.getByLabelText('Email Address')
     const passwordInput = screen.getByLabelText('Password')

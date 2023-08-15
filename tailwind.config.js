@@ -13,6 +13,7 @@ module.exports = {
       },
       fontFamily: {
         montserrat: ['Montserrat', 'sans-serif'],
+        playfair: ['Playfair Display', 'serif'],
         ubuntu: ['Ubuntu', 'sans-serif'],
       },
     },

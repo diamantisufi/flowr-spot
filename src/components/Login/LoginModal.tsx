@@ -4,11 +4,12 @@ import { LoginForm } from './LoginForm'
 import { modalStyles } from 'common/modalStyles'
 import { loginUser } from 'services/userService'
 import { LoginResponseData } from 'helpers/types'
+import { ModalCloseIcon } from 'components/ModalClose'
 
 type LoginModalProps = {
   isOpen: boolean
   onClose: () => void
-  handleLoginSuccess: () => void
+  handleLoginSuccess: (authToken: string) => void
 }
 
 export const LoginModal: React.FC<LoginModalProps> = ({
@@ -30,7 +31,7 @@ export const LoginModal: React.FC<LoginModalProps> = ({
     await loginUser(payload)
       .then((response: LoginResponseData | undefined) => {
         if (response?.auth_token) {
-          handleLoginSuccess()
+          handleLoginSuccess(response?.auth_token)
         }
       })
       .catch((error) => {
@@ -51,7 +52,8 @@ export const LoginModal: React.FC<LoginModalProps> = ({
       onRequestClose={onClose}
       ariaHideApp={false}
     >
-      <div className='modal-container'>
+      <div className='modal-container relative'>
+        <ModalCloseIcon onClose={onClose} />
         <h2 className='text-gray font-medium font-ubuntu mb-7'>
           {error ? 'Error' : 'Welcome Back'}
         </h2>

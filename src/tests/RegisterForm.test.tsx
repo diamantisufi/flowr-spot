@@ -8,7 +8,9 @@ describe('RegisterForm', () => {
     const mockOnSubmit = jest.fn()
     const mockError = ''
 
-    render(<RegisterForm onSubmit={mockOnSubmit} error={mockError} />)
+    render(
+      <RegisterForm onSubmit={mockOnSubmit} error={mockError} loading={false} />
+    )
 
     // Test if input fields and button are rendered
     const firstNameInput = screen.getByLabelText('First Name')
@@ -30,7 +32,9 @@ describe('RegisterForm', () => {
     const mockOnSubmit = jest.fn()
     const mockError = ''
 
-    render(<RegisterForm onSubmit={mockOnSubmit} error={mockError} />)
+    render(
+      <RegisterForm onSubmit={mockOnSubmit} error={mockError} loading={false} />
+    )
 
     // Fill out form fields
     const firstNameInput = screen.getByLabelText('First Name')

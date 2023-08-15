@@ -36,7 +36,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({
           <button
             disabled={loading}
             type='submit'
-            className='button-primary w-full p-5 mt-3 text-white font-ubuntu font-medium'
+            className='button-primary w-full p-5 mt-3 text-white font-ubuntu font-medium rounded'
           >
             {loading ? 'Logging in...' : 'Login to your Account'}
           </button>

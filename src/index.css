@@ -52,3 +52,11 @@ code {
   background-color: #f5f6f7;
   outline: none;
 }
+
+.flowerItemCard {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.0001) 0%,
+    rgba(0, 0, 0, 0.7) 89.5%
+  );
+}

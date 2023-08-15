@@ -59,7 +59,7 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({
           {error && <ErrorComponent error={error} />}
           <button
             type='submit'
-            className='button-primary w-full p-5 mt-3 text-white font-ubuntu font-medium'
+            className='button-primary w-full p-5 mt-3 text-white font-ubuntu font-medium rounded'
           >
             {loading ? 'Creating account...' : ' Create Account'}
           </button>

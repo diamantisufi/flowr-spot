@@ -1,5 +1,9 @@
 import React, { ReactNode, createContext, useReducer } from 'react'
-import { UPDATE_MODAL_STATE } from './actionTypes'
+import {
+  LOGIN_SUCCESS,
+  LOGOUT_SUCCESS,
+  UPDATE_MODAL_STATE,
+} from './actionTypes'
 
 type State = {
   user: any
@@ -8,8 +12,11 @@ type State = {
 
 const initialState = {
   user: null,
-  authToken: localStorage.getItem('auth_token') || '',
   activeModal: null,
+  auth: {
+    token: localStorage.getItem('auth_token'),
+    isAuthenticated: false,
+  },
 }
 
 type Action = {
@@ -29,6 +36,25 @@ const StateProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
         return {
           ...state,
           activeModal: action?.payload,
+        }
+
+      case LOGIN_SUCCESS:
+        localStorage.setItem('auth_token', action.payload)
+        return {
+          ...state,
+          auth: {
+            token: action.payload,
+            isAuthenticated: true,
+          },
+        }
+      case LOGOUT_SUCCESS:
+        localStorage.clear()
+        return {
+          ...state,
+          auth: {
+            token: null,
+            isAuthenticated: false,
+          },
         }
       default:
         return state
